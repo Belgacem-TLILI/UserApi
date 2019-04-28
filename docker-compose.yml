@@ -1,0 +1,57 @@
+version: '3'
+services:
+    apache:
+        build: .docker/apache
+        container_name: belga_apache
+        ports:
+          - 80:80
+        volumes:
+          - .docker/config/vhosts:/etc/apache2/sites-enabled
+          - .:/home/www/belga
+        depends_on:
+          - php
+
+    mysql:
+        image: mysql
+        command: "--default-authentication-plugin=mysql_native_password"
+        container_name: belga_mysql
+        volumes:
+            - .docker/data/db:/var/lib/mysql
+            - .docker/data/db.sql:/docker-entrypoint-initdb.d/dump.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: belga
+            MYSQL_USER: belga
+            MYSQL_PASSWORD: belga
+
+    php:
+        build: .docker/php
+        container_name: belga_php
+        volumes:
+          - .:/home/www/belga
+        depends_on:
+          - mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: belga_phpmyadmin
+        environment:
+          PMA_HOST: mysql
+          PMA_PORT: 3306
+        ports:
+            - 8080:80
+        links:
+            - mysql
+
+    composer_installation:
+      container_name: composer_installation
+      image: composer
+      volumes:
+        - .:/app
+      command: composer install --no-interaction -o
+      links:
+          - mysql
+      depends_on:
+        - apache
+        - mysql
+        - php

@@ -1,0 +1,5 @@
+# the below credentials can be injected during build process in jenkins
+parameters:
+    apikeys:
+        consumer1: ouddpLTHrPSOQcGEti2shgg6Bqsp2H1z
+        consumer2: fwpOjnZzJCNJR3eknswZZUN1VnYk4lBr
