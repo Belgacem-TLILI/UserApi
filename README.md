@@ -1,7 +1,7 @@
 
 # A Dockerised Symfony 4 & PHP7 User API
 
-This is an HTTP API do manage Users (create, read, update and delete)
+This is an HTTP API to manage Users (create, read, update and delete)
 
 ### Tech
 
@@ -22,7 +22,7 @@ Make sure you have:
  - Have docker working properly in your system
 
 
-You need only to run 2 commands from  in order to have the application working in your local system
+You need only to run 2 commands in order to have the application working in your local system
 
 
 ```
@@ -42,7 +42,9 @@ $ docker-compose up
 
 To try the application via postman you can use the provided collection [here](https://github.com/Belgacem-TLILI/UserApi/tree/master/contracts/postman)
 
-You access to phpMyAdmin via the address http://localhost:8080/ username and password are belga
+Note: API is secured by an X-API-KEY
+
+You can access to phpMyAdmin via the address http://localhost:8080/ username and password are belga
 
 ### Swagger contract
 
