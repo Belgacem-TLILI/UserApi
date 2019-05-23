@@ -26,7 +26,7 @@ You need only to run 2 commands in order to have the application working in your
 
 
 ```
-$ cd /Path/To/where/you/clone/folder
+$ cd /Path/to/your/clone/folder
 ```
 
 Then
