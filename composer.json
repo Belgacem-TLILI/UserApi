@@ -10,11 +10,13 @@
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.2.*",
+        "symfony/http-kernel": "4.2.*",
         "symfony/monolog-bundle": "^3.3",
         "symfony/orm-pack": "^1.0",
         "symfony/security": "4.2.*",
         "symfony/serializer": "4.2.*",
         "symfony/translation": "4.2.*",
+        "symfony/validator": "4.2.*",
         "symfony/yaml": "4.2.*"
     },
     "config": {
@@ -65,6 +67,7 @@
     "require-dev": {
         "mockery/mockery": "^1.2",
         "symfony/maker-bundle": "^1.11",
-        "symfony/phpunit-bridge": "4.2.*"
+        "symfony/phpunit-bridge": "4.2.*",
+        "symfony/profiler-pack": "^1.0"
     }
 }

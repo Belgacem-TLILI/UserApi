@@ -4,7 +4,7 @@ services:
         build: .docker/apache
         container_name: belga_apache
         ports:
-          - 80:80
+          - 81:80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/www/belga

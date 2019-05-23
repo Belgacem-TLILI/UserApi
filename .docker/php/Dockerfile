@@ -7,10 +7,11 @@ RUN apt-get update \
     zlib1g-dev \
     sudo
 
-RUN docker-php-ext-install pdo pdo_mysql zip
+RUN docker-php-ext-install pdo pdo_mysql zip opcache
 
 COPY php.ini /usr/local/etc/php/php.ini
 COPY php-fpm-pool.conf 	/usr/local/etc/php/pool.d/www.conf
+COPY opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
 	mv composer.phar /usr/local/bin/composer
@@ -37,6 +38,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 RUN echo "dev ALL=(ALL) ALL" > /etc/sudoers
+RUN echo "root ALL=(ALL) ALL" > /etc/sudoers
 
 WORKDIR /home/www/
 ##</romaricp>##

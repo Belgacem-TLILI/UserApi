@@ -29,7 +29,7 @@ class UserController
     private $serializer;
 
     /**
-     * @param User $
+     * @param User
      * @param ObjectSerializer $serializer
      */
     public function __construct(UserService $userService, ObjectSerializer $serializer)
