@@ -6,7 +6,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: http://localhost/v1/
+- url: http://localhost:81/v1/
   variables: {}
 paths:
   "/user":
